@@ -53,7 +53,8 @@ export default {
     this.pictures = await API.getPictures(this.data, this.page);
   },
   methods: {
-    lightbox() {
+    lightbox(event) {
+      this.$store.dispatch("setUrl", event.target.src);
       this.$router.push("/lightbox");
     },
   },
